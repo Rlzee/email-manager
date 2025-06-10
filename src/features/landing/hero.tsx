@@ -108,7 +108,7 @@ export function HeroSection() {
                   <Button
                     asChild
                     size="lg"
-                    className="rounded-xl px-5 text-base"
+                    className="px-5 text-base"
                   >
                     <Link href="#get-started">
                       <span className="text-nowrap">Connect Your Email Accounts</span>
@@ -120,7 +120,7 @@ export function HeroSection() {
                   asChild
                   size="lg"
                   variant="ghost"
-                  className="h-10.5 rounded-xl px-5"
+                  className="h-10.5 px-5"
                 >
                   <Link href="#demo">
                     <span className="text-nowrap">Try the Demo</span>
