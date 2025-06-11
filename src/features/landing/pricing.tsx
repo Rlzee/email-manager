@@ -51,30 +51,26 @@ export function Pricing() {
             </div>
 
             {/* Pro Plan */}
-            <div className="rounded-xl flex flex-col justify-between bg-secondary w-full md:w-1/2 space-y-8 p-6">
-              <div className="grid gap-6 sm:grid-cols-2">
-                <div className="space-y-4">
-                  <div>
-                    <h2 className="font-medium">Pro</h2>
-                    <span className="my-3 block text-2xl font-semibold">
-                      $19 / mo
-                    </span>
-                    <p className="text-muted-foreground text-sm">
-                      For professionals managing multiple accounts
-                    </p>
-                  </div>
-
-                  <Button asChild className="w-full">
-                    <Link href="">Get Started</Link>
-                  </Button>
-                </div>
+            <div className="rounded-xl flex flex-col justify-between bg-secondary w-full md:w-1/2 space-y-4 p-6">
+                <div>
+                <h2 className="font-medium">Pro</h2>
+                <span className="my-3 block text-2xl font-semibold">
+                 $19 / mo
+                </span>
+                <p className="text-muted-foreground text-sm">
+                 For professionals managing multiple accounts
+                </p>
               </div>
 
-              <div>
+              <Button asChild className="w-full">
+                <Link href="">Get Started</Link>
+              </Button>
+
+              <div className="border-t pt-4">
                 <div className="text-sm font-medium">
                   Everything in Free, plus:
                 </div>
-                <ul className="mt-4 list-outside space-y-3 text-sm">
+                <ul className="mt-2 list-outside space-y-3 text-sm">
                   {[
                     "Connect unlimited email accounts",
                     "Send emails from any connected address",
