@@ -1,17 +1,18 @@
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { Check } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { Check } from "lucide-react";
 
 export function Pricing() {
   return (
-    <section className="py-16 md:py-32" id='pricing'>
+    <section className="py-16 md:py-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             Plans made for every inbox
           </h2>
           <p className="text-muted-foreground lg:text-lg mb-6 md:mb-8 lg:mb-12">
-            Start managing all your email accounts in one place. Upgrade anytime as your needs grow.
+            Start managing all your email accounts in one place. Upgrade anytime
+            as your needs grow.
           </p>
         </div>
 
@@ -21,8 +22,12 @@ export function Pricing() {
             <div className="flex-1 space-y-4 p-6">
               <div>
                 <h2 className="font-medium">Free</h2>
-                <span className="my-3 block text-2xl font-semibold">$0 / mo</span>
-                <p className="text-muted-foreground text-sm">Ideal to test the unified inbox experience</p>
+                <span className="my-3 block text-2xl font-semibold">
+                  $0 / mo
+                </span>
+                <p className="text-muted-foreground text-sm">
+                  Ideal to test the unified inbox experience
+                </p>
               </div>
 
               <Button asChild variant="outline" className="w-full">
@@ -31,11 +36,11 @@ export function Pricing() {
 
               <ul className="list-outside space-y-3 text-sm border-t pt-4">
                 {[
-                  'Connect up to 2 email accounts',
-                  'Unified inbox interface',
-                  'Read & search emails',
-                  'Basic spam filtering',
-                  'Email support',
+                  "Connect up to 2 email accounts",
+                  "Unified inbox interface",
+                  "Read & search emails",
+                  "Basic spam filtering",
+                  "Email support",
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-2">
                     <Check className="size-3" />
@@ -51,8 +56,12 @@ export function Pricing() {
                 <div className="space-y-4">
                   <div>
                     <h2 className="font-medium">Pro</h2>
-                    <span className="my-3 block text-2xl font-semibold">$19 / mo</span>
-                    <p className="text-muted-foreground text-sm">For professionals managing multiple accounts</p>
+                    <span className="my-3 block text-2xl font-semibold">
+                      $19 / mo
+                    </span>
+                    <p className="text-muted-foreground text-sm">
+                      For professionals managing multiple accounts
+                    </p>
                   </div>
 
                   <Button asChild className="w-full">
@@ -62,19 +71,21 @@ export function Pricing() {
               </div>
 
               <div>
-                <div className="text-sm font-medium">Everything in Free, plus:</div>
+                <div className="text-sm font-medium">
+                  Everything in Free, plus:
+                </div>
                 <ul className="mt-4 list-outside space-y-3 text-sm">
                   {[
-                    'Connect unlimited email accounts',
-                    'Send emails from any connected address',
-                    'Smart labels & filters',
-                    'Real-time sync with Gmail, Outlook, iCloud',
-                    'Advanced search & filters',
-                    'Mobile app access',
-                    'Priority email support',
-                    'Custom signatures per account',
-                    'Attachment previews',
-                    'Daily backup of inboxes',
+                    "Connect unlimited email accounts",
+                    "Send emails from any connected address",
+                    "Smart labels & filters",
+                    "Real-time sync with Gmail, Outlook, iCloud",
+                    "Advanced search & filters",
+                    "Mobile app access",
+                    "Priority email support",
+                    "Custom signatures per account",
+                    "Attachment previews",
+                    "Daily backup of inboxes",
                   ].map((item, index) => (
                     <li key={index} className="flex items-center gap-2">
                       <Check className="size-3" />
@@ -88,5 +99,5 @@ export function Pricing() {
         </div>
       </div>
     </section>
-  )
+  );
 }

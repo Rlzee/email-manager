@@ -57,11 +57,9 @@ const testimonials = [
   },
 ];
 
-
 const firstColumn = testimonials.slice(0, 3);
 const secondColumn = testimonials.slice(3, 6);
 const thirdColumn = testimonials.slice(6, 9);
-
 
 export function Testimonials() {
   return (
@@ -72,15 +70,24 @@ export function Testimonials() {
             Frequently Asked Questions
           </h2>
           <p className="text-muted-foreground lg:text-lg mb-6 md:mb-8 lg:mb-12">
-            Everything you need to know about our unified email inbox. Still have questions? Don’t hesitate to reach out to our support team.
+            Everything you need to know about our unified email inbox. Still
+            have questions? Don’t hesitate to reach out to our support team.
           </p>
         </div>
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
           <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn testimonials={secondColumn} className="hidden md:block" duration={19} />
-          <TestimonialsColumn testimonials={thirdColumn} className="hidden lg:block" duration={17} />
+          <TestimonialsColumn
+            testimonials={secondColumn}
+            className="hidden md:block"
+            duration={19}
+          />
+          <TestimonialsColumn
+            testimonials={thirdColumn}
+            className="hidden lg:block"
+            duration={17}
+          />
         </div>
       </div>
     </section>
   );
-};
+}

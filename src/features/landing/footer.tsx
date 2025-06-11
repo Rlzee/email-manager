@@ -6,8 +6,12 @@ export function Footer() {
           © {new Date().getFullYear()} EM. All rights reserved.
         </div>
         <div className="flex space-x-4">
-          <a href="#" className="text-sm text-foreground/80 hover:text-primary">Privacy Policy</a>
-          <a href="#" className="text-sm text-foreground/80 hover:text-primary">Terms of Service</a>
+          <a href="#" className="text-sm text-foreground/80 hover:text-primary">
+            Privacy Policy
+          </a>
+          <a href="#" className="text-sm text-foreground/80 hover:text-primary">
+            Terms of Service
+          </a>
         </div>
       </div>
     </footer>
