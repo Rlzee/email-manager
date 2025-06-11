@@ -2,58 +2,58 @@ import { TestimonialsColumn } from "@/components/testimonials-columns";
 
 const testimonials = [
   {
-    text: "This ERP revolutionized our operations, streamlining finance and inventory. The cloud-based platform keeps us productive, even remotely.",
+    text: "Finally, one inbox for everything! I connected my Gmail and Outlook accounts in seconds. It's become my daily command center.",
     image: "https://randomuser.me/api/portraits/women/1.jpg",
     name: "Briana Patton",
-    role: "Operations Manager",
+    role: "Freelance Designer",
   },
   {
-    text: "Implementing this ERP was smooth and quick. The customizable, user-friendly interface made team training effortless.",
+    text: "The setup was effortless. I love being able to reply to emails from multiple accounts without switching platforms.",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     name: "Bilal Ahmed",
-    role: "IT Manager",
+    role: "Startup Founder",
   },
   {
-    text: "The support team is exceptional, guiding us through setup and providing ongoing assistance, ensuring our satisfaction.",
+    text: "As someone managing 5 different emails, this tool saved me hours every week. The interface is clean and fast.",
     image: "https://randomuser.me/api/portraits/women/3.jpg",
     name: "Saman Malik",
-    role: "Customer Support Lead",
-  },
-  {
-    text: "This ERP's seamless integration enhanced our business operations and efficiency. Highly recommend for its intuitive interface.",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    name: "Omar Raza",
-    role: "CEO",
-  },
-  {
-    text: "Its robust features and quick support have transformed our workflow, making us significantly more efficient.",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-    name: "Zainab Hussain",
     role: "Project Manager",
   },
   {
-    text: "The smooth implementation exceeded expectations. It streamlined processes, improving overall business performance.",
+    text: "I was skeptical at first, but this unified inbox is a game-changer. It's secure, fast, and super intuitive.",
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+    name: "Omar Raza",
+    role: "Digital Marketer",
+  },
+  {
+    text: "I travel a lot, and accessing all my accounts from one place—even on mobile—is incredible. Highly recommended!",
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
+    name: "Zainab Hussain",
+    role: "Remote Consultant",
+  },
+  {
+    text: "Customer support was super responsive when I had a sync issue. Got it solved within minutes. Great experience overall!",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
     name: "Aliza Khan",
-    role: "Business Analyst",
+    role: "Sales Executive",
   },
   {
-    text: "Our business functions improved with a user-friendly design and positive customer feedback.",
+    text: "I use it daily to manage my personal, business, and newsletter accounts. Smooth and powerful interface.",
     image: "https://randomuser.me/api/portraits/men/7.jpg",
     name: "Farhan Siddiqui",
-    role: "Marketing Director",
+    role: "Content Creator",
   },
   {
-    text: "They delivered a solution that exceeded expectations, understanding our needs and enhancing our operations.",
+    text: "The ability to send from any connected address is brilliant. No more copy-pasting or tab-switching.",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
     name: "Sana Sheikh",
-    role: "Sales Manager",
+    role: "Executive Assistant",
   },
   {
-    text: "Using this ERP, our online presence and conversions significantly improved, boosting business performance.",
+    text: "Best productivity tool I’ve used this year. Centralizing all my inboxes has made my life 10x easier.",
     image: "https://randomuser.me/api/portraits/men/9.jpg",
     name: "Hassan Ali",
-    role: "E-commerce Manager",
+    role: "Tech Blogger",
   },
 ];
 
@@ -67,11 +67,10 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
-            Frequently Asked Questions
+            What Our Users Say
           </h2>
           <p className="text-muted-foreground lg:text-lg mb-6 md:mb-8 lg:mb-12">
-            Everything you need to know about our unified email inbox. Still
-            have questions? Don’t hesitate to reach out to our support team.
+            Real stories from people who’ve simplified their email workflow with our all-in-one inbox.
           </p>
         </div>
         <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
