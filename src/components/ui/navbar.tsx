@@ -40,13 +40,12 @@ const Navbar = ({ appName, items, buttons }: NavbarProps) => {
 
   return (
     <nav className="z-50 sticky top-0 w-full bg-background/60 backdrop-blur-lg border-b border-border">
-        <div className="flex items-center justify-between h-14 mx-auto max-w-7xl px-6">
+        <div className="flex items-center justify-between h-14 mx-auto md:max-w-7xl md:px-6 px-2">
           <div className="md:hidden">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(!isOpen)}
-              className="md:ml-0 ml-4"
             >
               {isOpen ? (
                 <X className="h-5 w-5" />
