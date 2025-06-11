@@ -51,7 +51,7 @@ export const Accordions = forwardRef<
         type="multiple"
         value={value as string[]}
         onValueChange={setValue}
-        className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-card', className)}
+        className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-secondary', className)}
         {...rest}
         ref={ref}
       />
@@ -64,7 +64,7 @@ export const Accordions = forwardRef<
       value={value as string}
       onValueChange={setValue}
       collapsible
-      className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-card', className)}
+      className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-secondary', className)}
       {...rest}
       ref={ref}
     />
