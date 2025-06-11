@@ -1,66 +1,147 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import * as AccordionPrimitive from "@radix-ui/react-accordion"
-import { ChevronDownIcon } from "lucide-react"
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { Check, ChevronRight, LinkIcon } from 'lucide-react';
+import {
+  forwardRef,
+  useState,
+  useEffect,
+  type ComponentPropsWithoutRef,
+  type ForwardedRef,
+} from 'react';
+import { cn } from '@/lib/utils';
 
-import { cn } from "@/lib/utils"
+// Accordions component
+export const Accordions = forwardRef<
+  HTMLDivElement,
+  {
+    type?: 'single';
+    defaultValue?: string;
+    className?: string;
+  } & Omit<AccordionPrimitive.AccordionSingleProps, 'value' | 'onValueChange'> |
+  {
+    type: 'multiple';
+    defaultValue?: string[];
+    className?: string;
+  } & Omit<AccordionPrimitive.AccordionMultipleProps, 'value' | 'onValueChange'>
+>((props, ref: ForwardedRef<HTMLDivElement>) => {
+  const {
+    type = 'single',
+    defaultValue,
+    className,
+    ...rest
+  } = props as any;
 
-function Accordion({
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Root>) {
-  return <AccordionPrimitive.Root data-slot="accordion" {...props} />
-}
+  const [value, setValue] = useState<string | string[]>(
+    type === 'single' ? (defaultValue ?? '') : (defaultValue ?? [])
+  );
 
-function AccordionItem({
-  className,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Item>) {
+  useEffect(() => {
+    const id = window.location.hash.substring(1);
+    if (id.length > 0) {
+      setValue((prev) =>
+        typeof prev === 'string' ? id : [id, ...prev]
+      );
+    }
+  }, []);
+
+  if (type === 'multiple') {
+    return (
+      <AccordionPrimitive.Root
+        type="multiple"
+        value={value as string[]}
+        onValueChange={setValue}
+        className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-card', className)}
+        {...rest}
+        ref={ref}
+      />
+    );
+  }
+
+  return (
+    <AccordionPrimitive.Root
+      type="single"
+      value={value as string}
+      onValueChange={setValue}
+      collapsible
+      className={cn('divide-y divide-border overflow-hidden rounded-lg border bg-card', className)}
+      {...rest}
+      ref={ref}
+    />
+  );
+});
+
+Accordions.displayName = 'Accordions';
+
+// Accordion item
+export const Accordion = forwardRef<
+  HTMLDivElement,
+  Omit<ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>, 'value'> & {
+    title: string;
+  }
+>(({ title, className, id, children, ...props }, ref) => {
   return (
     <AccordionPrimitive.Item
-      data-slot="accordion-item"
-      className={cn("border-b last:border-b-0", className)}
-      {...props}
-    />
-  )
-}
-
-function AccordionTrigger({
-  className,
-  children,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Trigger>) {
-  return (
-    <AccordionPrimitive.Header className="flex">
-      <AccordionPrimitive.Trigger
-        data-slot="accordion-trigger"
-        className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
-          className
-        )}
-        {...props}
-      >
-        {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
-  )
-}
-
-function AccordionContent({
-  className,
-  children,
-  ...props
-}: React.ComponentProps<typeof AccordionPrimitive.Content>) {
-  return (
-    <AccordionPrimitive.Content
-      data-slot="accordion-content"
-      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
+      ref={ref}
+      value={id ?? title}
+      className={cn('group/accordion relative scroll-m-20', className)}
       {...props}
     >
-      <div className={cn("pt-0 pb-4", className)}>{children}</div>
-    </AccordionPrimitive.Content>
-  )
-}
+      <AccordionPrimitive.Header
+        id={id}
+        className="not-prose flex flex-row items-center font-medium text-foreground"
+      >
+        <AccordionPrimitive.Trigger 
+          className="flex flex-1 items-center gap-2 p-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <ChevronRight 
+            className="-ms-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200 group-data-[state=open]/accordion:rotate-90" 
+          />
+          {title}
+        </AccordionPrimitive.Trigger>
+        {id ? <CopyButton id={id} /> : null}
+      </AccordionPrimitive.Header>
+      <AccordionPrimitive.Content 
+        className="overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+      >
+        <div className="text-muted-foreground p-4 pt-0 prose-no-margin">{children}</div>
+      </AccordionPrimitive.Content>
+    </AccordionPrimitive.Item>
+  );
+});
 
-export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+Accordion.displayName = 'Accordion';
+
+// Copy button
+function CopyButton({ id }: { id: string }): React.ReactElement {
+  const [copied, setCopied] = useState(false);
+
+  const onClick = () => {
+    const url = new URL(window.location.href);
+    url.hash = id;
+    navigator.clipboard.writeText(url.toString());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <button
+      type="button"
+      aria-label="Copy Link"
+      className={cn(
+        "inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-sm font-medium",
+        "transition-colors duration-100",
+        "hover:bg-accent hover:text-accent-foreground",
+        "text-muted-foreground me-2",
+        "disabled:pointer-events-none disabled:opacity-50"
+      )}
+      onClick={onClick}
+    >
+      {copied ? (
+        <Check className="h-3.5 w-3.5" />
+      ) : (
+        <LinkIcon className="h-3.5 w-3.5" />
+      )}
+    </button>
+  );
+}
