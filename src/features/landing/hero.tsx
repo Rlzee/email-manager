@@ -27,7 +27,7 @@ const transitionVariants = {
 export function HeroSection() {
   return (
     <main className="overflow-hidden">
-      <section>
+      <section id='hero'>
         <div className="relative pt-24">
           {/* <div
             className="pointer-events-none absolute inset-0 -z-10 [background-size:40px_40px] select-none 

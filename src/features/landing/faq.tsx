@@ -2,7 +2,7 @@ import { Accordion, Accordions } from '@/components/ui/accordion';
 
 export function Faq() {
   return (
-    <section className="mb-32 mt-12">
+    <section className="mb-32 mt-12" id='faq'>
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
