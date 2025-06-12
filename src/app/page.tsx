@@ -4,6 +4,7 @@ import { Faq } from "@/features/landing/faq";
 import { Pricing } from "@/features/landing/pricing";
 import { Testimonials } from "@/features/landing/testimonials";
 import { Navbar } from "@/components/ui/navbar";
+import { Feature } from "@/features/landing/feature";
 
 export const NavbarData = {
   items: [
@@ -34,6 +35,7 @@ export default function Home() {
     <>
       <Navbar appName="EM" items={NavbarData.items} buttons={NavbarData.buttons} />
       <HeroSection />
+      <Feature />
       <Pricing />
       <Testimonials />
       <Faq />
