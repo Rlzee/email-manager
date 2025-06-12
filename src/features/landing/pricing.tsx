@@ -51,7 +51,7 @@ export function Pricing() {
             </div>
 
             {/* Pro Plan */}
-            <div className="rounded-xl flex flex-col justify-between bg-secondary w-full md:w-1/2 space-y-4 p-6">
+            <div className="rounded-xl flex flex-col justify-between bg-secondary w-full md:w-1/2 space-y-4 p-6 border">
                 <div>
                 <h2 className="font-medium">Pro</h2>
                 <span className="my-3 block text-2xl font-semibold">
