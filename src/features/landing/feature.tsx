@@ -1,15 +1,15 @@
 export function Feature() {
   return (
-    <section className="py-16 md:py-32" id="feature">
+    <section className="pb-16 md:pb-32" id="feature">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
+        {/* <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             Unify your inbox. Supercharge your productivity
           </h2>
-        </div>
+        </div> */}
 
         <div className="flex flex-col md:flex-row">
-          <div className="flex-1 border-r border-border h-20 flex relative"></div>
+          <div className="flex-1 border-r border-border h-28 flex relative"></div>
           <div className="flex-1 rounded-xl"></div>
         </div>
 
