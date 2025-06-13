@@ -5,9 +5,15 @@ import { Pricing } from "@/features/landing/pricing";
 import { Testimonials } from "@/features/landing/testimonials";
 import { Navbar } from "@/components/ui/navbar";
 import { Feature } from "@/features/landing/feature";
+import { Bento } from "@/features/landing/bento";
+import { Feature2 } from "@/features/landing/feature2";
 
 export const NavbarData = {
   items: [
+    {
+      label: "Features",
+      sectionId: "feature",
+    },
     {
       label: "Pricing",
       sectionId: "pricing",
@@ -36,6 +42,8 @@ export default function Home() {
       <Navbar appName="EM" items={NavbarData.items} buttons={NavbarData.buttons} />
       <HeroSection />
       <Feature />
+      <Feature2 />
+      <Bento />
       <Pricing />
       <Testimonials />
       <Faq />

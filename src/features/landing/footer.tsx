@@ -17,10 +17,10 @@ export function Footer() {
           </Link>
         </div>
         <div className="flex items-center gap-3 cursor-pointer">
-          <Link href="">
+          <Link href="https://github.com/Rlzee">
             <Icons.github className="size-4 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
-          <Link href="">
+          <Link href="https://x.com/rlzzee">
             <Icons.x className="size-4 text-muted-foreground hover:text-foreground transition-colors" />
           </Link>
         </div>

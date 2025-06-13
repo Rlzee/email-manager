@@ -63,9 +63,9 @@ const thirdColumn = testimonials.slice(6, 9);
 
 export function Testimonials() {
   return (
-    <section className="py-16 md:py-32" id="testimonials">
+    <section className="py-16 md:py-32 scroll-mt-50 md:scroll-mt-0" id="testimonials">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
+        <div className="mx-auto flex max-w-3xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             What Our Users Say
           </h2>
