@@ -1,6 +1,6 @@
 export function Feature2() {
   return (
-    <section className="pb-10 md:pb-32" id="feature2">
+    <section className="pb-10 md:pb-16" id="feature2">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 md:py-32 items-center">
             <div>
