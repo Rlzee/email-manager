@@ -88,11 +88,11 @@ export function HeroSection() {
                 </Link>
 
                 <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-sans">
-                  All Your Emails. One Inbox.
+                  All Your Emails One Inbox
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-balance text-lg font-mono">
                   Connect and manage all your email accounts — Gmail, Outlook,
-                  iCloud, and more — from one secure and unified interface.
+                  iCloud, and more — from one secure and unified interface
                 </p>
               </AnimatedGroup>
 
