@@ -1,6 +1,7 @@
-"use client"
+"use client";
 
-import { TestimonialsColumn } from "@/components/testimonials-columns"
+import { TestimonialsColumn } from "@/components/testimonials-columns";
+import { AnimatedGroup } from "@/components/ui/animatedGroup";
 
 const testimonials = [
   {
@@ -57,38 +58,44 @@ const testimonials = [
     name: "Hassan Ali",
     role: "Tech Blogger",
   },
-]
+];
 
-const firstColumn = testimonials.slice(0, 3)
-const secondColumn = testimonials.slice(3, 6)
-const thirdColumn = testimonials.slice(6, 9)
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
 
 export function Testimonials() {
   return (
-    <section className="py-16 md:py-32 scroll-mt-50 md:scroll-mt-0" id="testimonials">
+    <section
+      className="py-16 md:py-32 scroll-mt-50 md:scroll-mt-0"
+      id="testimonials"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             What Our Users Say
           </h2>
           <p className="text-muted-foreground lg:text-lg mb-6 md:mb-8 lg:mb-12">
-            Real stories from people who’ve simplified their email workflow with our all-in-one inbox.
+            Real stories from people who’ve simplified their email workflow with
+            our all-in-one inbox.
           </p>
         </div>
-        <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
-          <TestimonialsColumn testimonials={firstColumn} duration={15} />
-          <TestimonialsColumn
-            testimonials={secondColumn}
-            className="hidden md:block"
-            duration={19}
-          />
-          <TestimonialsColumn
-            testimonials={thirdColumn}
-            className="hidden lg:block"
-            duration={17}
-          />
-        </div>
+        <AnimatedGroup preset="blur-slide" inView>
+          <div className="flex justify-center gap-6 mt-10 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[740px] overflow-hidden">
+            <TestimonialsColumn testimonials={firstColumn} duration={15} />
+            <TestimonialsColumn
+              testimonials={secondColumn}
+              className="hidden md:block"
+              duration={19}
+            />
+            <TestimonialsColumn
+              testimonials={thirdColumn}
+              className="hidden lg:block"
+              duration={17}
+            />
+          </div>
+        </AnimatedGroup>
       </div>
     </section>
-  )
+  );
 }

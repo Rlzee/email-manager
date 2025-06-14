@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Check } from "lucide-react"
+import { AnimatedGroup } from "@/components/ui/animatedGroup"
 
 export function Pricing() {
   return (
@@ -18,10 +19,14 @@ export function Pricing() {
           </p>
         </div>
 
+        {/* Pricing Cards */}
+          <AnimatedGroup preset="blur" inView inViewMargin="-200px">
         <div className="rounded-xl flex flex-col justify-between border p-1">
           <div className="flex flex-col gap-4 md:flex-row">
             {/* Free Plan */}
             <div className="flex-1 space-y-4 p-6">
+          <AnimatedGroup preset="slide" inView inViewMargin="-200px">
+              
               <div>
                 <h2 className="font-medium">Free</h2>
                 <span className="my-3 block text-2xl font-semibold">
@@ -50,10 +55,13 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
+          </AnimatedGroup>
             </div>
 
             {/* Pro Plan */}
             <div className="rounded-xl flex flex-col justify-between bg-secondary w-full md:w-1/2 space-y-4 p-6 border">
+          <AnimatedGroup preset="slide" inView inViewMargin="-200px">
+
               <div>
                 <h2 className="font-medium">Pro</h2>
                 <span className="my-3 block text-2xl font-semibold">
@@ -92,9 +100,11 @@ export function Pricing() {
                   ))}
                 </ul>
               </div>
+          </AnimatedGroup>
             </div>
           </div>
         </div>
+        </AnimatedGroup>
       </div>
     </section>
   )

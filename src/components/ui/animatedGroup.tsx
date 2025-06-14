@@ -1,8 +1,8 @@
 'use client';
-import { ReactNode } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView, Variants } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 type PresetType =
   | 'fade'
@@ -24,6 +24,8 @@ type AnimatedGroupProps = {
     item?: Variants;
   };
   preset?: PresetType;
+  inView?: boolean;
+  inViewMargin?: string;
 };
 
 const defaultContainerVariants: Variants = {
@@ -41,10 +43,7 @@ const defaultItemVariants: Variants = {
   visible: { opacity: 1 },
 };
 
-const presetVariants: Record<
-  PresetType,
-  { container: Variants; item: Variants }
-> = {
+const presetVariants: Record<PresetType, { container: Variants; item: Variants }> = {
   fade: {
     container: defaultContainerVariants,
     item: {
@@ -142,17 +141,26 @@ function AnimatedGroup({
   className,
   variants,
   preset,
+  inView = false,
+  inViewMargin = '-100px',
 }: AnimatedGroupProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: inViewMargin as any });
+
   const selectedVariants = preset
     ? presetVariants[preset]
     : { container: defaultContainerVariants, item: defaultItemVariants };
+
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
+  const shouldAnimate = inView ? isInView : true;
+
   return (
     <motion.div
-      initial='hidden'
-      animate='visible'
+      ref={ref}
+      initial="hidden"
+      animate={shouldAnimate ? 'visible' : 'hidden'}
       variants={containerVariants}
       className={cn(className)}
     >
