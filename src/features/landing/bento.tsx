@@ -17,9 +17,9 @@ export function Bento() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="mx-auto max-w-7xl px-6"
       >
-        <div className="grid grid-cols-2 w-full gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
           {/* Left Grid */}
-          <div className="bg-secondary border rounded-tl-xl h-auto p-8 flex flex-col justify-between min-h-[400px]">
+          <div className="bg-secondary border rounded-t-xl md:rounded-tl-xl md:rounded-tr-none h-auto p-8 flex flex-col justify-between min-h-[400px]">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-xl bg-background">
@@ -44,7 +44,7 @@ export function Bento() {
           </div>
 
           {/* Right Grid */}
-          <div className="bg-secondary border rounded-tr-xl p-8 flex flex-col justify-between min-h-[400px]">
+          <div className="bg-secondary border md:rounded-tr-xl md:rounded-bl-none p-8 flex flex-col justify-between min-h-[400px]">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-background rounded-xl">
