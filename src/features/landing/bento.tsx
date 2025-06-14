@@ -1,22 +1,12 @@
 'use client'
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
 import { Mail, Search, Bell, Shield, Zap, Users, Archive, Star } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
 export function Bento() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-
   return (
-    <section className="pb-16 md:pb-32" id="bento" ref={ref}>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mx-auto max-w-7xl px-6"
-      >
+    <section className="pb-16 md:pb-32" id="bento">
+      <div  className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-4">
           {/* Left Grid */}
           <div className="bg-secondary border rounded-t-xl md:rounded-tl-xl md:rounded-tr-none h-auto p-8 flex flex-col justify-between min-h-[400px]">
@@ -114,7 +104,7 @@ export function Bento() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

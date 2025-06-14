@@ -1,23 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
 export function Feature() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, {
-    once: true,
-    amount: 0.8,
-  })
-
   return (
-    <section id="feature" ref={ref} className="pt-16 md:pt-0">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="mx-auto max-w-7xl px-6"
-      >
+    <section id="feature" className="pt-16 md:pt-0">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="hidden md:flex md:flex-row">
           <div className="flex-1 border-r border-border h-28 flex relative"></div>
           <div className="flex-1 rounded-xl"></div>
@@ -54,7 +40,7 @@ export function Feature() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

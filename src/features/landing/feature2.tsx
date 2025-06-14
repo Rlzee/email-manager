@@ -1,20 +1,9 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-
 export function Feature2() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.4 })
-
   return (
-    <section className="pb-10 md:pb-16" id="feature2" ref={ref}>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="mx-auto max-w-7xl px-6"
-      >
+    <section className="pb-10 md:pb-16" id="feature2">
+      <div  className="mx-auto max-w-7xl px-6">
         {/* Bloc 1 : Smart Email Sending */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 md:py-32 items-center">
           <div>
@@ -52,7 +41,7 @@ export function Feature2() {
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }

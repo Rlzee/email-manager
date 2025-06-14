@@ -1,23 +1,13 @@
 'use client'
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Check } from "lucide-react"
 
 export function Pricing() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.3 })
-
   return (
-    <section className="scroll-mt-60 md:scroll-mt-20" id="pricing" ref={ref}>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mx-auto max-w-7xl px-6"
-      >
+    <section className="scroll-mt-60 md:scroll-mt-20" id="pricing">
+      <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto flex max-w-3xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             Plans made for every inbox
@@ -105,7 +95,7 @@ export function Pricing() {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
