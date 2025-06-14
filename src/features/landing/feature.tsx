@@ -24,31 +24,26 @@ export function Feature() {
 
         <div className="flex flex-col gap-4 md:flex-row">
           <div className="flex-1 space-y-4 p-6 md:rounded-l-xl md:rounded-tr-none rounded-t-xl bg-secondary border">
-            <h3 className="text-lg font-semibold">Unified Inbox</h3>
+            <h3 className="text-lg font-semibold">Smart Signatures</h3>
             <p className="text-sm text-muted-foreground">
-              Connect multiple email accounts (Gmail, Outlook, iCloud) and
-              manage all your conversations from one centralized interface — no
-              switching tabs.
+              Automatically apply the right signature for the right email —
+              work, personal, or custom — with zero effort.
             </p>
           </div>
 
           <div className="flex-1 space-y-4 p-6 bg-secondary border">
-            <h3 className="text-lg font-semibold">
-              Send & Reply from Any Account
-            </h3>
+            <h3 className="text-lg font-semibold">One-Click Unsubscribe</h3>
             <p className="text-sm text-muted-foreground">
-              Compose new emails or respond using any of your connected
-              addresses, all without leaving the app. Full control over sender
-              identity.
+              Unsubscribe from unwanted emails across all inboxes instantly.
+              Take back control of your attention.
             </p>
           </div>
 
           <div className="flex-1 space-y-4 p-6 bg-secondary md:rounded-r-xl md:rounded-bl-none rounded-b-xl border">
-            <h3 className="text-lg font-semibold">Secure & Real-Time</h3>
+            <h3 className="text-lg font-semibold">Smart Reply Suggestions</h3>
             <p className="text-sm text-muted-foreground">
-              All connections are handled through secure OAuth. Your inbox stays
-              synced in real-time across all providers with industry-grade
-              encryption.
+              Reply faster with AI-generated responses tailored to your message
+              tone and content.
             </p>
           </div>
         </div>
