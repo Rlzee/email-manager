@@ -7,7 +7,7 @@ export function Feature2() {
     <section className="pb-10 md:pb-16" id="feature2">
       <div  className="mx-auto max-w-7xl px-6">
         {/* Bloc 1 : Smart Email Sending */}
-        <AnimatedGroup preset="blur-slide" inView inViewMargin="-300px">
+        <AnimatedGroup preset="blur-slide" inView inViewMargin="-200px">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 md:py-32 items-center">
             <div>
               <h2 className="text-2xl md:text-3xl font-semibold mb-4">
@@ -28,7 +28,7 @@ export function Feature2() {
         </AnimatedGroup>
 
         {/* Bloc 2 : Advanced Search */}
-        <AnimatedGroup preset="blur-slide" inView inViewMargin="-300px">
+        <AnimatedGroup preset="blur-slide" inView inViewMargin="-200px">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 md:py-32 items-center">
             <div className="flex items-center justify-center order-2 md:order-1 pb-16 md:pb-0">
               <div className="bg-secondary border rounded-xl h-52 w-52">

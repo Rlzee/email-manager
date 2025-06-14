@@ -4,7 +4,7 @@ import { AnimatedGroup } from "@/components/ui/animatedGroup"
 
 export function Feature() {
   return (
-    <section id="feature" className="pt-16 md:pt-0">
+    <section id="feature" className="pt-16 md:pt-0 scroll-mt-50 md:scroll-mt-0">
       <div className="mx-auto max-w-7xl px-6">
         <div className="hidden md:flex md:flex-row">
           <div className="flex-1 border-r border-border h-28 flex relative"></div>
