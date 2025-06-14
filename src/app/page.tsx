@@ -7,34 +7,7 @@ import { Navbar } from "@/components/ui/navbar";
 import { Feature } from "@/features/landing/feature";
 import { Bento } from "@/features/landing/bento";
 import { Feature2 } from "@/features/landing/feature2";
-
-export const NavbarData = {
-  items: [
-    {
-      label: "Features",
-      sectionId: "feature",
-    },
-    {
-      label: "Pricing",
-      sectionId: "pricing",
-    },
-    {
-      label: "Testimonials",
-      sectionId: "testimonials",
-    },
-    {
-      label: "Faqs",
-      sectionId: "faq",
-    },
-  ],
-  buttons: [
-    {
-      label: "To identify",
-      href: "/",
-    },
-  ],
-};
-
+import { NavbarData } from "@/data/data";
 
 export default function Home() {
   return (
