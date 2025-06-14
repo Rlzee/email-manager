@@ -1,9 +1,21 @@
+"use client";
+
 import { Accordion, Accordions } from "@/components/ui/accordion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export function Faq() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
   return (
-    <section className="pb-16 md:pb-32 pt-12" id="faq">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="pb-16 md:pb-32 pt-12" id="faq" ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mx-auto max-w-7xl px-6"
+      >
         <div className="mx-auto flex max-w-3xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             Frequently Asked Questions
@@ -60,7 +72,7 @@ export function Faq() {
             </p>
           </Accordion>
         </Accordions>
-      </div>
+      </motion.div>
     </section>
   );
 }

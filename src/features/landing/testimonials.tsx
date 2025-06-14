@@ -1,4 +1,8 @@
-import { TestimonialsColumn } from "@/components/testimonials-columns";
+"use client"
+
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+import { TestimonialsColumn } from "@/components/testimonials-columns"
 
 const testimonials = [
   {
@@ -55,16 +59,24 @@ const testimonials = [
     name: "Hassan Ali",
     role: "Tech Blogger",
   },
-];
+]
 
-const firstColumn = testimonials.slice(0, 3);
-const secondColumn = testimonials.slice(3, 6);
-const thirdColumn = testimonials.slice(6, 9);
+const firstColumn = testimonials.slice(0, 3)
+const secondColumn = testimonials.slice(3, 6)
+const thirdColumn = testimonials.slice(6, 9)
 
 export function Testimonials() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
   return (
-    <section className="py-16 md:py-32 scroll-mt-50 md:scroll-mt-0" id="testimonials">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-16 md:py-32 scroll-mt-50 md:scroll-mt-0" id="testimonials" ref={ref}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="mx-auto max-w-7xl px-6"
+      >
         <div className="mx-auto flex max-w-3xl flex-col text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
             What Our Users Say
@@ -86,7 +98,7 @@ export function Testimonials() {
             duration={17}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
-  );
+  )
 }
